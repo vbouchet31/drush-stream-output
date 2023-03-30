@@ -1,0 +1,40 @@
+{
+  "name": "vbouchet31/drush-stream-output",
+  "description": "Drush extension to allow logging command result in a file.",
+  "type": "drupal-drush",
+  "homepage": "https://github.com/vbouchet31/drush-stream-output",
+  "authors": [
+    {
+      "name": "Vincent Bouchet (vbouchet31)",
+      "homepage": "https://www.drupal.org/u/vbouchet",
+      "role": "Maintainer"
+    }
+  ],
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": ">=8.0",
+    "composer/installers": "^1.0 || ^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Drush\\Commands\\drush_stream_output\\": "src"
+    },
+    "classmap": ["."]
+  },
+  "extra": {
+    "installer-name": "drush_stream_output",
+    "installer-paths": {
+      "drush/Commands/{$name}": [ "vbouchet31/drush-stream-output" ]
+    },
+    "drush": {
+      "services": {
+        "drush.services.yml": "^11"
+      }
+    }
+  },
+  "require-dev": {
+    "drush/drush": "^11"
+  }
+}
